@@ -1,4 +1,5 @@
 import ChristmasTree from "@/app/components/christmas_tree";
+import Message from "@/app/components/message";
 import { Orbitron } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import Image from "next/image";
@@ -22,12 +23,7 @@ export default function Home() {
                         <ChristmasTree></ChristmasTree>
                     </div>
                     <div className="message-box flex flex-col justify-center items-center gap-7">
-                        <div className={`${orbitron.className} binary-title`}>
-                            FELIZ NAVIDAD
-                        </div>
-                        <div className={`${mono.className} binary-text`}>
-                            En esta época de luz y esperanza, celebremos los momentos que unen corazones y llenan de alegría cada rincon
-                        </div>
+                        <Message></Message>
                     </div>
                 </div>
             </main>
