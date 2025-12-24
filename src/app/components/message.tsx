@@ -4,6 +4,8 @@ import { JetBrains_Mono, Open_Sans, Orbitron, Poppins } from "next/font/google"
 import { RefObject, useEffect, useRef, useState } from "react";
 import { MessagePrint } from "../interfaces/message_print.interface";
 import { messageToPrint } from "../constants/message_to_print";
+import Debug from "./debug";
+import { MessageProps } from "../props/message.prop";
 
 const orbitron = Orbitron({
     subsets: ["latin"],
@@ -26,7 +28,7 @@ const poppins = Poppins({
     display: 'swap',
 })
 
-export default function Message() {
+export default function Message({ enableButton: handleButton }: MessageProps) {
 
     const messageRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
     const countRef = useRef<number>(0);
@@ -50,7 +52,10 @@ export default function Message() {
         hasStarted.current = false;
 
         const printMessage = () => {
-            if (messageIndex >= messageList.length) return;
+            if (messageIndex >= messageList.length) {
+                handleButton();
+                return;
+            };
             const currentMessage = messageList[messageIndex];
             const span: HTMLSpanElement = document.createElement("span");
             // span.textContent = "A";
@@ -59,9 +64,7 @@ export default function Message() {
 
             intervalRef.current = setInterval(() => {
                 if (countRef.current >= currentMessage.message.length) {
-                    
                     clearInterval(intervalRef.current!);
-
                     countRef.current = 0;
                     messageIndex++;
                     printMessage();
@@ -79,18 +82,6 @@ export default function Message() {
         }
     }, [messageToPrint]);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         if(editRef.current){
-    //             editRef.current.hidden = !isHidden.current;
-    //             isHidden.current = !isHidden.current;
-    //         }
-    //     }, 200);
-
-    //     return () => {
-    //         clearInterval(interval!);
-    //     }
-    // });
     return <>
         <div className={`${openSans.className} flex flex-row justify-between items-center w-full bg-[#252525] p-2.5 text-[#8d929b] rounded-t-[10px] font-bold`}>
             <div className="flex flex-row gap-1">
@@ -122,7 +113,6 @@ export default function Message() {
             </div>
             <div className={`${openSans.className} font-semibold text-[#ababab] ml-7`} ref={messageRef}>
                 {/* message here */}
-                {/* <div className="w-0.5 h-4.5 bg-[#89898a]" ref={editRef}></div> */}
             </div>
             <div className="flex flex-row gap-2 items-center ml-7">
                 <span className={`${openSans.className} font-semibold text-[#b37bae]`}>return</span>
