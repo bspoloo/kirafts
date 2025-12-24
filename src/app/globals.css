@@ -53,12 +53,12 @@ body {
   /* color: white; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #2b3035;
+  /* align-items: center;
+  justify-content: center; */
+  background-color: #1e1e1e;
   border-radius: 10px;
-  border: 1px solid #4b4f53;
-  padding: 3rem;
+  /* border: 1px solid #4b4f53; */
+  /* padding: 3rem; */
   width: 600px;
   /* box-shadow: 0 0 8px rgba(75, 79, 83, 0.99); */
 }
