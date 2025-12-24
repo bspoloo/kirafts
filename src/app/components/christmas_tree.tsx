@@ -5,7 +5,6 @@ import { Tree } from "../classes/tree.class"
 
 export default function ChristmasTree() {
     const [tree, setTree] = useState<Tree>();
-    const [numberStyle, setNumberStyle] = useState<string>();
     const leavesRef = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
@@ -14,7 +13,6 @@ export default function ChristmasTree() {
 
     useEffect(() => {
         setTree(new Tree(10, 1));
-        setNumberStyle("text-4xl w-7.5 h-12.5 binary-number-green");
     }, []);
 
     useEffect(() => {
@@ -52,13 +50,13 @@ export default function ChristmasTree() {
     }, [tree]);
 
     if (!tree) return null;
-    return <div className="">
+    return <div className="container-tree">
         {
             tree.getLeaves().map((leaves, i) =>
                 <div key={`${i}`} className="flex flex-row justify-center items-center">
                     {
                         leaves.map((leave, j) =>
-                            <div key={`${i}-${j}`} className={numberStyle} ref={(el) => {
+                            <div key={`${i}-${j}`} className="binary-number-green" ref={(el) => {
                                 if (el && !leavesRef.current.includes(el)) {
                                     leavesRef.current.push(el);
                                 }
@@ -75,7 +73,7 @@ export default function ChristmasTree() {
                 <div key={`${i}`} className="flex flex-row justify-center items-center">
                     {
                         longs.map((long, j) =>
-                            <div key={`${i}-${j}`} className={numberStyle}>
+                            <div key={`${i}-${j}`} className="binary-number-green">
                                 {long}
                             </div>
                         )
