@@ -66,7 +66,7 @@ export default function Debug({ enabled }: CompileButtonProps) {
             >
                 <Fade in={open}>
                     <Box sx={modalStyle}>
-                        <div className="flex flex-row justify-between items-center p-2 bg-[#dcd9d5] rounded-t-[10px]">
+                        <div className="flex flex-row justify-between items-center p-2 bg-[#dcd9d5] rounded-t-[10px] gap-1.5">
                             <div className="flex flex-row justify-center items-center gap-1">
                                 <a href="https://github.com/bspoloo">
                                     <FaGithub size={24} color="#565a5b" />
@@ -78,11 +78,11 @@ export default function Debug({ enabled }: CompileButtonProps) {
                                     <FaInstagram size={24} color="#565a5b" />
                                 </a>
                             </div>
-                            <span className="text-[#565a5b] font-bold">Animetx - Consola de Ejecución</span>
+                            <span className="text-[#565a5b] font-bold text-center">Animetx - Consola de Ejecución</span>
                             <button className="flex justify-center items-center rounded-[5px] transition-all text-[#565a5b] font-bold w-5 h-5 hover:bg-[#565a5b] hover:text-[#dcd9d5]" onClick={handleClose}>x</button>
                         </div>
                         <div>
-                            <div className=" flex flex-col p-2.5">
+                            <div className=" flex flex-col p-5">
                                 <span className="binary-title">{messageChristmas}</span>
                                 <span className="binary-text">{"<< El programa ha finalizado: con codigo de salida: 0 >>"}</span>
                                 <span className="binary-text">{"<< Presione Enter para cerrar esta ventana >>"}</span>
