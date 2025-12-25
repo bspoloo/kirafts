@@ -1,6 +1,6 @@
 import { MessagePrint } from "../interfaces/message_print.interface";
 
-export const messageChristmas = '" En esta época de luz y esperanza, celebremos los momentos que unen corazones y llenan de alegría cada rincón. "';
+export const messageChristmas = 'En esta época de luz y esperanza, celebremos los momentos que unen corazones y llenan de alegría cada rincón.';
 
 export const messageToPrint: MessagePrint[] = [
     {
@@ -8,7 +8,7 @@ export const messageToPrint: MessagePrint[] = [
         color: "#ababab"
     },
     {
-        message: messageChristmas,
+        message: `" ${messageChristmas} "`,
         color: "#cc9077"
     },
     {
