@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #3f3f47;
+  --foreground: #3f3f47;
 }
 
 @theme inline {
@@ -27,6 +27,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .binary-number-green {
   font-family: Geneva, Verdana, sans-serif;
   color: white;
