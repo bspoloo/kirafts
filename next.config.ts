@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/',
-        destination: '/',
+        destination: '/pages/card',
       },
       {
         source: '/card/christmas',
