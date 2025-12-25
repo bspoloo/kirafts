@@ -34,8 +34,6 @@ export default function Message({ enableButton: handleButton }: MessageProps) {
     const countRef = useRef<number>(0);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
     const hasStarted = useRef<boolean>(false);
-    const isHidden = useRef<boolean>(false);
-    const editRef = useRef<HTMLDivElement>(null);
     const messageList: MessagePrint[] = messageToPrint;
     let messageIndex = 0;
 

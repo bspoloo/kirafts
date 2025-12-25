@@ -1,0 +1,1 @@
+export const messageWhatsapp = "como es? xd";
