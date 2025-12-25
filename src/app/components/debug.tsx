@@ -65,7 +65,7 @@ export default function Debug({ enabled }: CompileButtonProps) {
                     <Box sx={modalStyle}>
                         <div className="flex flex-row justify-between items-center p-2 bg-[#dcd9d5] rounded-t-[10px]">
                             <span className="text-[#565a5b] font-bold">Animetx - Consola de Ejecución</span>
-                            <button className="flex justify-center items-center rounded-[5px] transition-all text-[#565a5b] font-bold w-[20px] h-[20px] hover:bg-[#565a5b] hover:text-[#dcd9d5]" onClick={handleClose}>x</button>
+                            <button className="flex justify-center items-center rounded-[5px] transition-all text-[#565a5b] font-bold w-5 h-5 hover:bg-[#565a5b] hover:text-[#dcd9d5]" onClick={handleClose}>x</button>
                         </div>
                         <div>
                             <div className=" flex flex-col p-2.5">
