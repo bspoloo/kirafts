@@ -9,6 +9,9 @@ import { modalStyle } from "../constants/modal_style";
 import { CompileButtonProps } from "../props/compile_button.prop";
 import { Open_Sans } from "next/font/google";
 import { messageChristmas } from "../constants/message_to_print";
+import ChristmasAnme from "../../../public/christmas-anime.gif"
+import { FaGithub, FaHome, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { messageWhatsapp } from "../constants/message_to_whatsapp";
 
 const openSans = Open_Sans({
     subsets: ['latin'],
@@ -64,6 +67,17 @@ export default function Debug({ enabled }: CompileButtonProps) {
                 <Fade in={open}>
                     <Box sx={modalStyle}>
                         <div className="flex flex-row justify-between items-center p-2 bg-[#dcd9d5] rounded-t-[10px]">
+                            <div className="flex flex-row justify-center items-center gap-1">
+                                <a href="https://github.com/bspoloo">
+                                    <FaGithub size={24} color="#565a5b" />
+                                </a>
+                                <a href={`https://wa.me/59172612649?text=${messageWhatsapp}`}>
+                                    <FaWhatsapp size={24} color="#565a5b" />
+                                </a>
+                                <a href="https://www.instagram.com/animetx098/">
+                                    <FaInstagram size={24} color="#565a5b" />
+                                </a>
+                            </div>
                             <span className="text-[#565a5b] font-bold">Animetx - Consola de Ejecución</span>
                             <button className="flex justify-center items-center rounded-[5px] transition-all text-[#565a5b] font-bold w-5 h-5 hover:bg-[#565a5b] hover:text-[#dcd9d5]" onClick={handleClose}>x</button>
                         </div>
@@ -73,6 +87,9 @@ export default function Debug({ enabled }: CompileButtonProps) {
                                 <span className="binary-text">{"<< El programa ha finalizado: con codigo de salida: 0 >>"}</span>
                                 <span className="binary-text">{"<< Presione Enter para cerrar esta ventana >>"}</span>
                             </div>
+                        </div>
+                        <div className="flex flex-row justify-center items-center w-full">
+                            <img src={ChristmasAnme.src} alt="image anime" />
                         </div>
                     </Box>
                 </Fade>
