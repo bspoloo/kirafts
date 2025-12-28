@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
       use: [{ loader: "@svgr/webpack", options: { icon: true } }]
     });
   },
-  
+
   async rewrites() {
     return [
       {
@@ -24,6 +24,10 @@ const nextConfig: NextConfig = {
       {
         source: '/card/christmas',
         destination: '/pages/card',
+      },
+      {
+        source: '/gifts/lum',
+        destination: '/pages/games/lum',
       }
     ]
   }

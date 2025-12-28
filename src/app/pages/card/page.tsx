@@ -17,7 +17,7 @@ const mono = JetBrains_Mono({
     weight: ["400", "600", "700"]
 });
 
-export default function Home() {
+export default function Card() {
     const [enabled, setEnabled] = useState<boolean>(false);
     const handleButton = () => {
         setEnabled(true);
