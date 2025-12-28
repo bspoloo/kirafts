@@ -5,7 +5,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import { modalStyle } from "../constants/modal_style";
+import { modalStyleDebug } from "../constants/modal_style_debug";
 import { CompileButtonProps } from "../props/compile_button.prop";
 import { Open_Sans } from "next/font/google";
 import { messageChristmas } from "../constants/message_to_print";
@@ -65,7 +65,7 @@ export default function Debug({ enabled }: CompileButtonProps) {
                 }}
             >
                 <Fade in={open}>
-                    <Box sx={modalStyle}>
+                    <Box sx={modalStyleDebug}>
                         <div className="flex flex-row justify-between items-center p-2 bg-[#dcd9d5] rounded-t-[10px] gap-1.5">
                             <div className="flex flex-row justify-center items-center gap-1">
                                 <a href="https://github.com/bspoloo">
