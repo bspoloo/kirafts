@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
         destination: '/pages/card',
       },
       {
-        source: '/gifts/lum',
+        source: '/gifts/birthday',
         destination: '/pages/games/lum',
       }
     ]
