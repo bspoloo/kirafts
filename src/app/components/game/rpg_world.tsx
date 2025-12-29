@@ -1,34 +1,100 @@
 import { useEffect, useRef } from "react"
-import Character from "../../../../public/character/character.gif"
-
-export default function RPGWorld() {
-
-    const characterRef = useRef<HTMLImageElement>(null);
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
-    const pos = useRef({ x: 0, y: 0 });
-
-    useEffect(() => {
-        let animationId: number;
-
-        const animate = () => {
-            pos.current.x += 0.1;
-            pos.current.y += 0.1;
-
-            if (characterRef.current) {
-                characterRef.current.style.transform =
-                    `translate(${pos.current.x}px, ${pos.current.y}px)`;
-            }
-
-            animationId = requestAnimationFrame(animate);
-            return () => cancelAnimationFrame(animationId);
-        };
-
-        animate();
-    }, []);
+import CharacterLum from "./character_lum"
+import { RPGWorldProps } from "@/app/props/rpg_world.prop";
+import Grass from "./ground";
+import GrassImage from "../../../../public/objects/grass.jpg";
+import GroundImage from "../../../../public/objects/ground.png";
+import Controls from "./controls";
+export default function RPGWorld(rpgWorldProps: RPGWorldProps) {
+    const worldRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="flex flex-col justify-center items-center bg-[#c8d65c] w-[95%] h-[95%] border-8 border-[#9e6d3b] rounded-2xl p-2">
-            <img src={Character.src} alt="character" width={50} ref={characterRef} className="relative" />
+        <div className={`relative bg-[#c8d65c] border-8 border-[#9e6d3b] rounded-2xl overflow-hidden`} ref={worldRef} style={{
+            width: `${rpgWorldProps.width}px`,
+            height: `${rpgWorldProps.height}px`,
+        }}>
+            <CharacterLum
+                name="Lum"
+                position={{ x: 0, y: 0 }}
+                size={{ w: 70 }}
+                worldRef={worldRef}
+            ></CharacterLum>
+            <div className="flex flex-row flex-wrap w-full h-full">
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+                <Grass asset={GrassImage.src} name="grass" position={{ x: 0, y: 0 }} size={{ w: 98.6, h: 300 }}></Grass>
+
+            </div>
         </div>
+
     )
 }
