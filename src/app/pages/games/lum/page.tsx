@@ -58,7 +58,7 @@ export default function LumBirthday() {
                     <div className="w-225">
                         <span className={`${arcade.className} text-center flex flex-row justify-between items-center p-2 gap-1.5 text-[#b86f50] text-[20px]`}> Feliz cumple, pasala bien, y el juego aun ta imcompleto xd</span>
                     </div>
-                    <RPGWorld width={1000} height={700}></RPGWorld>
+                    <RPGWorld width={900} height={700}></RPGWorld>
                 </div>
             )}
         </div>
