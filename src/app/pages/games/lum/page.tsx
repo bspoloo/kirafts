@@ -4,6 +4,7 @@ import { modalStyleError } from "@/app/constants/modal_style_error";
 // import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import TurnPhone from "../../../../../public/rotate-screen.gif";
+import DesktopImage from "../../../../../public/desktop.png";
 import { useEffect, useRef, useState } from "react";
 import RPGWorld from "@/app/components/game/rpg_world";
 import { IHeart } from "@/app/interfaces/heart.interface";
@@ -40,9 +41,9 @@ export default function LumBirthday() {
         <div className=" flex justify-center items-center w-full h-svh">
             {isMobile ? (
                 <MessageError
-                    message="Rote su celular"
+                    message="Use el modo escritorio en celular"
                     style={modalStyleError}
-                    image={TurnPhone.src}
+                    image={DesktopImage.src}
                     onClose={false}
                     isOpen={true}
                 />
@@ -57,7 +58,7 @@ export default function LumBirthday() {
                     <div className="w-225">
                         <span className={`${arcade.className} text-center flex flex-row justify-between items-center p-2 gap-1.5 text-[#b86f50] text-[20px]`}> Feliz cumple, pasala bien, y el juego aun ta imcompleto xd</span>
                     </div>
-                    <RPGWorld width={1200} height={700}></RPGWorld>
+                    <RPGWorld width={1000} height={700}></RPGWorld>
                 </div>
             )}
         </div>
