@@ -1,6 +1,6 @@
 import { SxProps, Theme } from "@mui/material";
 
-export const modalStyle: SxProps<Theme> = {
+export const modalStyleError: SxProps<Theme> = {
     position: 'absolute' as const,
     top: '50%',
     left: '50%',
@@ -10,11 +10,11 @@ export const modalStyle: SxProps<Theme> = {
     maxWidth: 720,
     minWidth: 320,
 
-    bgcolor: '#0f1117',
+    bgcolor: '#90d5ca',
     color: '#c9d1d9',
 
-    border: '1px solid #30363d',
-    borderRadius: '10px',
+    border: '5px solid #409fcb',
+    borderRadius: '15px',
 
     boxShadow: '0 20px 60px rgba(0,0,0,0.8)',
 
