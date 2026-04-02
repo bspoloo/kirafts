@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   /* config options here */
 
   reactStrictMode: true,
-  distDir: "build",
+  // distDir: "build",
   output: "standalone",
   turbopack: {},
   webpack(config) {
