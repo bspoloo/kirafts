@@ -28,6 +28,10 @@ const nextConfig: NextConfig = {
       {
         source: '/gifts/birthday',
         destination: '/pages/games/lum',
+      },
+      {
+        source: '/records/training',
+        destination: '/pages/training',
       }
     ]
   }
