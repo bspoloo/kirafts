@@ -40,7 +40,7 @@ export default function TrainingPage() {
                                     {/* <svg fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={""} text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
                                 </div>
                                 <p className="card-footer">
-                                    Sé que mañana vuelves al gym, pero sinceramente lo que más admiro no es eso… sino las ganas que tienes de seguir 
+                                    Sé que hoy vuelves al gym, pero sinceramente lo que más admiro no es eso… sino las ganas que tienes de seguir 
                                     cuidándote incluso cuando la vida te cansa. Eso te hace muy bonita.
                                     :v
                                 </p>
